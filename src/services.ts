@@ -16,7 +16,6 @@ export const storeEmployeeData = async (key: string, value: string) => {
 export const getEmployeeData = async (key: string) => {
     try {
         const data = await AsyncStorage.getItem(key).then(req => JSON.parse(req)).then(json => json);
-        console.log(data, 'from db')
         if (data !== null) {
             return data;
         } else {

@@ -12,12 +12,12 @@ import {COLORS} from './src/constants';
 import {EmployeeListScreen} from './src/screens/EmployeeListScreen';
 
 const App = () => {
-  return (
-    <SafeAreaView>
-      <StatusBar backgroundColor={COLORS.WHITE} barStyle="dark-content" />
-      <EmployeeListScreen />
-    </SafeAreaView>
-  );
+    return (
+        <SafeAreaView>
+            <StatusBar backgroundColor={COLORS.WHITE} barStyle="dark-content" />
+            <EmployeeListScreen />
+        </SafeAreaView>
+    );
 };
 
 export default App;

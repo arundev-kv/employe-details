@@ -47,12 +47,15 @@ export const EmployeeListScreen = props => {
             {employeeData.length > 0 ? (
                 <FlatList
                     data={searchedData}
+                    keyExtractor={item => item.id}
                     contentContainerStyle={styles.listStyle}
                     renderItem={({item}) => (
                         <EmployeeCard
                             name={item?.name}
+                            id={item.id}
                             profileImage={item?.profile_image}
                             companyName={item?.company?.name}
+                            onPressCard={(id: number) => alert(id)}
                         />
                     )}
                     ListHeaderComponent={

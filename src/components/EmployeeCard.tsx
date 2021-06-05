@@ -6,11 +6,22 @@ export interface AppProps {
     profileImage: string;
     name: string;
     companyName: string;
+    id: number;
+    onPressCard: (id: number) => void;
 }
 
-export const EmployeeCard = ({name, companyName, profileImage}: AppProps) => {
+export const EmployeeCard = ({
+    name,
+    companyName,
+    profileImage,
+    id,
+    onPressCard,
+}: AppProps) => {
     return (
-        <TouchableOpacity activeOpacity={0.5} style={styles.container}>
+        <TouchableOpacity
+            activeOpacity={0.5}
+            style={styles.container}
+            onPress={() => onPressCard(id)}>
             <View style={styles.imageContainer}>
                 <Image
                     source={{uri: profileImage}}
