@@ -27,10 +27,13 @@ export const EmployeeListScreen = props => {
         if (trimmedText.length > 0) {
             const newData = employeeData.filter(item => {
                 const itemData = `${item.name.toUpperCase()}`;
+                const emailData = `${item.email.toUpperCase()}`;
                 const textData = trimmedText.toUpperCase();
-                return itemData.indexOf(textData) > -1;
+                return (
+                    itemData.indexOf(textData) > -1 ||
+                    emailData.indexOf(textData) > -1
+                );
             });
-            console.log(newData, 'new');
             if (newData.length > 0) {
                 setSearchedData(newData);
             }
